@@ -1,0 +1,21 @@
+          LIGHT
+           ▼
+    ┌────────────────┐
+    │  Solar Panel   │
+    └───┬────────┬───┘
+        │        │
+     Solar+   Solar−
+        │        │
+        │   ┌───────────────┐
+        └──▶│ Oscillator    │
+            │ (CMOS, uW)    │
+            └────┬─────┬───┘
+                 │     │
+                 │     └─────────────┐
+                 │                   │
+          [ Metal CORE ]       [ Back Electrode ]
+                 │                   │
+          [ Conductive /            (inside body)
+            thin plastic tip ]
+                 │
+          [ Capacitive Screen ]
