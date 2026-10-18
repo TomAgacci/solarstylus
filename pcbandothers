@@ -1,0 +1,266 @@
+===========================================================
+1) PCB LAYOUT (ASCII, SINGLE-SIDED THROUGH‑HOLE)
+===========================================================
+
+Legend:
+  U1  = CD4069UBE (PDIP‑14)
+  D1  = Schottky diode (BAT54 or similar)
+  C1  = 10–47 µF reservoir capacitor
+  R1  = 100 kΩ (oscillator resistor)
+  C2  = 10 nF (oscillator capacitor)
+  INV2–4 = paralleled outputs (pins)
+  JP_SOL+ / JP_SOL− = solar panel leads
+  JP_TIP = stylus metal core lead
+  JP_BACK = back electrode plate lead
+
+Top view (component side):
+
+          +--------------------------------------+
+          |   JP_SOL+      JP_SOL−              |
+          |    o             o                  |
+          |    |             |                  |
+          |   D1             |                  |
+          |  ┌─┐            C1                  |
+          |  │>|  +      ┌─────┐               |
+          |  └─┘---+-----│  +  │---- GND -----+
+          |        |     └─────┘
+          |        |        |
+          |       VDD      GND
+          |        |        |
+          |   +------------------------+       JP_TIP
+          |   |        U1 CD4069UBE    |        o
+          |   |   (PDIP‑14 footprint)  |        |
+          |   +------------------------+       |
+          |    1 2 3 4 5 6 7 8 9 10 11 12 13 14
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+          |    | | | | | | | | |  |  |  |  |  |
+
+(Use any standard PDIP‑14 footprint; route INV1 pins to R1/C2,
+paralleling INV2–4 outputs to JP_TIP, and tie GND pins + JP_BACK
+to a large copper pour.)
+
+===========================================================
+2) BREADBOARD WIRING MAP (TEXT‑ONLY)
+===========================================================
+
+Assume:
+  • Standard solderless breadboard with center gap
+  • Left/right power rails for +V and GND
+  • U1 = CD4069UBE PDIP‑14 straddling the center gap
+
+Rails:
+  TOP RED RAIL  = +V (Solar+ after D1)
+  TOP BLUE RAIL = GND (Solar−)
+  BOTTOM RED    = optional +V mirror
+  BOTTOM BLUE   = optional GND mirror
+
+Placement:
+
+  U1 (CD4069UBE) across center gap:
+    Pins 1–7 on left side, pins 8–14 on right side.
+
+Connections:
+
+  1) Solar panel
+     • JP_SOL+ → TOP RED RAIL
+     • JP_SOL− → TOP BLUE RAIL
+
+  2) Diode + reservoir cap
+     • D1 anode → JP_SOL+ row
+     • D1 cathode → TOP RED RAIL (VDD)
+     • C1 (+) → TOP RED RAIL
+     • C1 (−) → TOP BLUE RAIL
+
+  3) Power to U1
+     • U1 VDD pin (e.g., pin 14) → TOP RED RAIL
+     • U1 GND pin (e.g., pin 7)  → TOP BLUE RAIL
+
+  4) Oscillator (using INV1)
+     • Choose one inverter input pin (e.g., pin 1) and its output (pin 2):
+       - R1 between pin 2 (output) and TOP RED RAIL
+       - C2 between pin 2 (output) and pin 1 (input)
+       - Pin 1 also tied to pin 2 via C2 (feedback node)
+
+  5) Output buffer (INV2–4)
+     • Take oscillator output node (pin 2) and jumper it to:
+       - Input pins of INV2, INV3, INV4 (e.g., pins 3, 5, 9)
+     • Tie their outputs together on one row:
+       - Outputs (e.g., pins 4, 6, 10) all jumpered to same row
+     • From that row, run a wire to JP_TIP (stylus core lead)
+
+  6) Back electrode
+     • JP_BACK → TOP BLUE RAIL (GND)
+
+  7) Mechanical
+     • JP_TIP wire goes off‑board to metal core inside stylus
+     • JP_BACK wire goes off‑board to internal metal plate
+
+===========================================================
+3) FULL PARTS LIST (WITH DIGI‑KEY / MOUSER EXAMPLES)
+===========================================================
+
+Core IC:
+  • CD4069UBE – Hex CMOS inverter, PDIP‑14
+    - Digi‑Key: 296-3518-5-ND (Texas Instruments CD4069UBE)
+    - Mouser: 595-CD4069UBE (Texas Instruments CD4069UBE) 
+
+Solar panel:
+  • Small silicon calculator‑style solar cell
+    - Any 2‑pin, ~1.5–3 V open‑circuit, tens of µA
+    - Example: “mini solar cell 30x60 mm” (generic; pick by size)
+
+Diode:
+  • Schottky diode for low forward drop
+    - Example: BAT54 series
+    - Digi‑Key: BAT54CFSCT-ND or similar
+    - Mouser: 771-BAT54C-7-F or similar
+
+Capacitors:
+  • C1 (reservoir): 10 µF – 47 µF, 10 V or higher
+    - Type: radial electrolytic or tantalum
+    - Example: 10 µF 16 V radial electrolytic
+  • C2 (oscillator): 10 nF – 100 nF
+    - Type: ceramic, 50 V
+    - Example: 10 nF (0.01 µF) X7R
+
+Resistors:
+  • R1 (oscillator): 100 kΩ – 1 MΩ
+    - 1/4 W, 5% or better
+    - Example: 100 kΩ, 1/4 W, carbon film
+
+Mechanical / electrodes:
+  • Metal core rod:
+    - Material: brass or stainless steel, Ø ~2–3 mm
+    - Length: matches stylus body
+  • Conductive rubber tip OR thin plastic cone:
+    - “Capacitive stylus tip” replacement parts work well
+  • Back electrode plate:
+    - Thin copper or brass strip inside body, connected to GND
+
+PCB / prototyping:
+  • Single‑sided FR‑4 board, ~8–10 cm long
+  • Solderless breadboard (for initial testing)
+  • Hookup wire (24–26 AWG)
+
+Enclosure:
+  • Stylus‑shaped plastic tube or 3D‑printed shell
+  • Adhesive or screws to mount solar panel on exterior
+
+===========================================================
+4) MECHANICAL SHELL DIAGRAM (STYLUS BODY, SIDE VIEW)
+===========================================================
+
+Side view (not to scale):
+
+          [ TIP END ]                         [ BACK END ]
+                ▲                                   ▲
+                |                                   |
+                |                                   |
+        +-------------------+               +-------------------+
+        |  Conductive /     |               |   Plastic Cap     |
+        |  thin plastic tip |               |   (removable)     |
+        +---------+---------+               +---------+---------+
+                  |                                   |
+                  |                                   |
+             [ METAL CORE ]---------------------------+
+                  |                                   |
+                  |                                   |
+        +---------+-----------------------------------+
+        |         Plastic Stylus Shell                |
+        |   (smooth, cylindrical or tapered)         |
+        +--------------------------------------------+
+                  |
+                  |
+          [ Solar Panel Jewel ]
+        +------------------------+
+        |  Small silicon strip   |
+        |  glued to shell        |
+        +------------------------+
+                  |
+                  | (wires inside shell)
+                  |
+          +-------+------------------------+
+          |   PCB with CD4069 oscillator   |
+          |   (mounted along core)         |
+          +--------------------------------+
+                  |
+                  |
+          [ Back Electrode Plate ]
+        +----------------------------+
+        |  Thin metal strip inside   |
+        |  shell, tied to GND       |
+        +----------------------------+
+
+Key mechanical points:
+
+  • Metal core runs the full length, anchored at back end.
+  • Tip is a rubber or thin‑plastic cap over the core.
+  • Solar panel is mounted on the outer shell near the front or mid‑section.
+  • Wires from solar panel go inside to the PCB.
+  • PCB sits alongside or around the core.
+  • Back electrode plate is glued or screwed inside the shell and wired to GND.
+  • Entire outer surface (except tip and solar window) is smooth plastic.
+
+===========================================================
+END OF ASCII PACKAGE
+===========================================================
