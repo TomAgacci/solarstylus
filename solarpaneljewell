@@ -1,0 +1,48 @@
+===========================================================
+STANDARD CALCULATOR SOLAR PANEL — TECHNICAL DETAILS
+===========================================================
+
+TYPE:
+  • Polycrystalline or monocrystalline silicon photovoltaic strip
+  • Typically 4–6 cells wired in series
+  • Encapsulated in epoxy or acrylic “jewel” window
+
+ELECTRICAL CHARACTERISTICS:
+  • Open‑circuit voltage (Voc): 1.5 V – 3.0 V (bright indoor light)
+  • Short‑circuit current (Isc): 20 µA – 200 µA (varies by size)
+  • Maximum power: ~30 µW – 300 µW (typical calculator range)
+  • Two terminals only:
+        - Positive bus bar
+        - Negative bus bar
+
+PHYSICAL CHARACTERISTICS:
+  • Thickness: 1–2 mm (including encapsulation)
+  • Width: 10–20 mm (common)
+  • Length: 20–60 mm (common)
+  • Front surface:
+        - Dark silicon cells
+        - Silver bus bars visible as thin horizontal lines
+  • Back surface:
+        - Epoxy or plastic backing
+        - Sometimes faint metal traces or frame
+
+CONNECTION POINTS:
+  • Pads may be hidden under epoxy
+  • Any exposed bus bar or metal frame can be used as a contact
+  • Conductive clamp or strap works if pads are inaccessible
+
+OPERATING NOTES:
+  • Works under ambient indoor light
+  • Output rises significantly under direct sunlight
+  • Ideal for ultra‑low‑power CMOS circuits (oscillators, charge pumps)
+  • Perfect match for passive or semi‑active capacitive stylus designs
+
+WHY IT WORKS FOR YOUR STYLUS:
+  • Provides enough voltage to run a micro‑power oscillator
+  • Lightweight and thin for stylus integration
+  • Acts as a large conductive surface when tied to the metal core
+  • No battery required — fully ambient‑light powered
+
+===========================================================
+END OF SOLAR PANEL DETAILS
+===========================================================
