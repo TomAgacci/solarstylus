@@ -1,0 +1,127 @@
+===========================================================
+ SOLAR‑POWERED ACTIVE CAPACITIVE STYLUS (NO HAND CONTACT)
+===========================================================
+
+   LIGHT
+     ▼
++----------------------+
+|   SOLAR PANEL        |   Typical: 1.5–3.0 V in bright light
+|   (2‑pin silicon)    |
++----------+-----------+
+           |
+           |  +V (Solar+)
+           |
+        +--+-----------------------------+
+        |                                |
+        |    +----------------------+    |
+        |    |  CD4069UB CMOS IC   |    |
+        |    |  (unbuffered type)  |    |
+        |    +----------+-----------+    |
+        |               |                |
+        |               | VDD            |
+        |               |                |
+        |               +----------------+
+        |                                |
+        |  GND (Solar−)                  |
+        +--------------------------------+
+
+===========================================================
+  POWER CONDITIONING
+===========================================================
+
+Solar+ ----->|----+-----> VDD (CD4069UB)
+             D1   |
+             (Schottky)
+                  |
+                  +----[ 10 µF – 47 µF ]---- GND
+                       (Reservoir capacitor)
+
+===========================================================
+  OSCILLATOR STAGE (Ultra‑Low‑Power Relaxation Oscillator)
+===========================================================
+
+Use ONE unbuffered inverter as the oscillator:
+
+            +VDD
+              |
+              |
+             [R]  100 kΩ – 1 MΩ
+              |
+              +-----------------------------+
+              |                             |
+              |                         +---+---+
+              |                         | INV1  |
+              |                         | (osc) |
+              |                         +---+---+
+              |                             |
+              +-------------[C]-------------+
+                            10 nF – 100 nF
+
+Oscillator frequency approx:
+    f ≈ 1 / (1.4 · R · C)
+
+Examples:
+    R = 100 kΩ, C = 10 nF → ~700 Hz
+    R = 1 MΩ,   C = 10 nF → ~70 Hz
+
+===========================================================
+  OUTPUT BUFFER (Drive the Stylus Tip)
+===========================================================
+
+Paralleling 3–4 remaining inverters increases output strength:
+
+                 +---+    +---+    +---+
+Osc Out -------->|INV2|-->|INV3|-->|INV4|----+
+                 +---+    +---+    +---+    |
+                                               |
+                                               |
+                                        [ METAL CORE ]
+                                        (runs entire length
+                                         of stylus body)
+
+===========================================================
+  TIP ASSEMBLY
+===========================================================
+
+METAL CORE
+   |
+   +----> Covered by:
+           - Conductive rubber tip  (best)
+           - OR very thin plastic cone (works if thin)
+
+This becomes the ACTIVE electrode touching the screen.
+
+===========================================================
+  BACK ELECTRODE (Pseudo‑Ground Plate)
+===========================================================
+
+Solar− (GND) ------------------------------+
+                                           |
+                                           |
+                                   [ LARGE METAL PLATE ]
+                                   (inside stylus body,
+                                    acts as reference)
+
+===========================================================
+  FULL ELECTRICAL FLOW SUMMARY
+===========================================================
+
+Solar panel → reservoir capacitor → CD4069UB oscillator → 
+buffered output → metal core → conductive rubber/plastic tip →
+capacitive screen
+
+Back electrode tied to Solar− provides the return reference.
+
+===========================================================
+  NOTES
+===========================================================
+
+• Requires bright indoor light or sunlight.
+• Works on many capacitive screens but not guaranteed universal.
+• No hand contact required — fully self‑powered & self‑referenced.
+• Entire circuit fits inside a normal stylus barrel.
+• Solar panel can be mounted externally like the “China Solar” style.
+
+===========================================================
+ END OF SCHEMATIC
+===========================================================
